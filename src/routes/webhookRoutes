@@ -3,6 +3,7 @@ import { handleWebhook } from "../controllers/webhookController.js";
 
 const router = express.Router();
 
+// Webhook endpoint for UPI transaction confirmations
 router.post("/upi", handleWebhook);
 
 export default router;
