@@ -1,8 +1,15 @@
+import { successResponse, errorResponse } from "../utils/apiResponse.js";
+import { validateSignature } from "../utils/signatureValidator.js";
+
 export const handleWebhook = async (req, res) => {
   try {
-    console.log("Webhook received:", req.body);
-    res.status(200).json({ success: true });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Webhook processing failed" });
+    const signature = req.headers["x-zencode-signature"];
+    if (!validateSignature(req.body, process.env.API_KEY, signature))
+      return errorResponse(res, "Invalid signature", 401);
+
+    // process webhook...
+    return successResponse(res, "Webhook accepted");
+  } catch {
+    return errorResponse(res, "Webhook processing failed");
   }
 };
