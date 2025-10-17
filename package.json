@@ -1,16 +1,14 @@
 {
   "name": "zencode-payin-upi-api",
   "version": "1.0.0",
-  "description": "Secure Pay-In UPI API by ZENCODE AI PRIVATE LIMITED — handles UPI transactions, merchant onboarding, and webhooks.",
-  "main": "server.js",
+  "description": "Secure Pay-In UPI API by ZENCODE AI PRIVATE LIMITED.",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
     "test": "mocha --timeout 10000 \"tests/**/*.test.js\""
   },
-  "author": "ZENCODE AI PRIVATE LIMITED",
-  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -22,5 +20,6 @@
     "mocha": "^10.7.3",
     "nodemon": "^3.1.4",
     "supertest": "^7.0.0"
-  }
+  },
+  "license": "MIT"
 }
